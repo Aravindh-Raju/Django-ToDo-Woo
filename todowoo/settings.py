@@ -121,3 +121,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.joinpath('static')
 LOGIN_URL = '/login'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('Looks like no local file. You must be on production.')
